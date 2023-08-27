@@ -17,10 +17,9 @@ This module solves issues like
 
 ## Usage
 
-In a web worker, import the module first before all other modules so that it can
-attach its message handler before any top-level awaits, and then use the
-imported `addMessageEventListener` function instead of `self.onmessage = ...` to
-attach your message event listener and process all queued events:
+In a web worker, use the `addMessageEventListener` function from this module
+instead of `self.onmessage = ...` to attach your message event listener and
+process all queued events:
 
 ```ts
 import { addMessageEventListener } from "https://deno.land/x/worker_message_queuer@v1.0.0/mod.ts";
@@ -30,3 +29,7 @@ addMessageEventListener((event) => {
   console.log("Received message:", event.data);
 });
 ```
+
+As long as this module is statically imported in the worker module, it does not
+matter whether it is imported before or after other imports containing top-level
+await.

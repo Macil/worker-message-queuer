@@ -14,10 +14,6 @@ const defer = new DeferredPromise<(event: MessageEvent) => unknown>();
  * This function fixes the issue where message events sent during top-level await
  * inside of a worker module would be lost.
  *
- * The module this function is in should be imported first in the worker module
- * to ensure a message event handler is set up before any messages are sent to
- * the worker.
- *
  * @param callback The message handler to use for the current worker.
  *
  * @example
