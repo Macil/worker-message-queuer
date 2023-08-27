@@ -23,7 +23,7 @@ imported `addMessageEventListener` function instead of `self.onmessage = ...` to
 attach your message event listener and process all queued events:
 
 ```ts
-import { addMessageEventListener } from "...";
+import { addMessageEventListener } from "https://deno.land/x/worker_message_queuer@v1.0.0/mod.ts";
 import { exampleFunction } from "example/module-using-top-level-await";
 
 addMessageEventListener((event) => {

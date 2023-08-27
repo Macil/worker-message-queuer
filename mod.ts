@@ -23,7 +23,7 @@ const defer = new DeferredPromise<(event: MessageEvent) => unknown>();
  * @example
  * Example usage in a worker module:
  * ```ts
- * import { addMessageEventListener } from "...";
+ * import { addMessageEventListener } from "https://deno.land/x/worker_message_queuer@v1.0.0/mod.ts";
  * import { exampleFunction } from "example/module-using-top-level-await";
  *
  * addMessageEventListener((event) => {
